@@ -1,0 +1,23 @@
+# Virtual environment
+venv/
+.venv/
+env/
+ENV/
+
+# Python cache and bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Models and large files
+# *.pkl (Keep tracked since category_classifier.pkl and urgency_classifier.pkl are under 1MB)
+
+# Datasets
+data/tickets.csv
+data/tickets_clean.csv
+batch_test.csv
+
+# OS metadata
+.DS_Store
+Thumbs.db
