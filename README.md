@@ -1,35 +1,59 @@
-# Support Ticket Classifier
+# Ticket3D: AI-Powered Support Triage & Cinematic 3D Analytics
 
-An end-to-end Machine Learning pipeline that auto-classifies support tickets by category and urgency level, routing them to the correct department with an auto-calculated SLA response window.
+Ticket3D is a state-of-the-art, end-to-end Support Operations platform. It leverages machine learning to automatically classify incoming customer support tickets by category and urgency in real-time, route them to the correct department, and calculate dynamic SLA response windows.
 
-## Folder Structure
+The system features:
+1. 🎬 **Apple-Style Cinematic 3D Scrollytelling Showcase**: A highly immersive, high-performance product landing page using GSAP, ScrollTrigger, and HTML5 Canvas.
+2. 📊 **Interactive Analytics Dashboard**: A Streamlit application offering detailed insights, ticket volume trends, SLA status tracking, and batch CSV processing.
+3. ⚡ **FastAPI Backend**: A high-performance REST API with Swagger documentation for real-time and batch predictions.
+4. 🧠 **Machine Learning Pipeline**: A clean Scikit-Learn training and inference workflow using TF-IDF vectorization and Logistic Regression.
+
+---
+
+## 📁 Repository Structure
 
 ```text
-ticket-classifier/
-├── data/
-│   ├── tickets.csv            # Raw dataset
-│   └── tickets_clean.csv      # Cleaned and processed dataset
-├── model/
-│   ├── train.py               # Model training script
-│   ├── predict.py             # Inference/prediction module
-│   ├── category_classifier.pkl# Trained category model
-│   └── urgency_classifier.pkl # Trained urgency model
+Ticket3D/
 ├── api/
-│   └── main.py                # FastAPI web server
+│   └── main.py                 # FastAPI web server & endpoints
 ├── app/
-│   └── dashboard.py           # Streamlit user interface
-├── data_prep.py               # Preprocessing & cleaning script
-├── requirements.txt           # Python project requirements
-└── README.md                  # Project documentation
+│   └── dashboard.py            # Streamlit analytics dashboard & UI
+├── data/
+│   ├── tickets.csv             # Raw support tickets dataset
+│   └── tickets_clean.csv       # Preprocessed and cleaned dataset
+├── model/
+│   ├── train.py                # Model training pipeline
+│   ├── predict.py              # Real-time prediction & SLA routing logic
+│   ├── category_classifier.pkl # Serialized category model
+│   └── urgency_classifier.pkl  # Serialized urgency model
+├── website/
+│   ├── index.html              # Apple-style scrollytelling landing page
+│   ├── styles.css              # Premium custom CSS system
+│   ├── script.js               # Canvas frame-by-frame scroll animation
+│   ├── gsap.min.js             # GSAP animation library
+│   ├── ScrollTrigger.min.js    # GSAP scroll plugin
+│   └── animation_frames/       # 229 high-fidelity animation frames
+├── data_prep.py                # Text preprocessing and mapping script
+├── requirements.txt            # Python dependencies
+└── README.md                   # Project documentation
 ```
 
 ---
 
-## Getting Started
+## ⚡ Tech Stack
+
+- **ML Pipeline**: Python, Scikit-Learn, Pandas, NumPy, Joblib
+- **FastAPI Backend**: FastAPI, Uvicorn, Pydantic
+- **Dashboard**: Streamlit, Plotly Express, Requests
+- **Cinematic Frontend**: HTML5 Canvas, Vanilla CSS3 (Custom design system), GSAP 3.12.5, ScrollTrigger
+
+---
+
+## 🚀 Getting Started
 
 ### 1. Install Dependencies
 
-Make sure you have installed all dependencies from `requirements.txt`:
+Ensure you have Python 3.9+ installed, then install all project requirements:
 
 ```bash
 pip install -r requirements.txt
@@ -37,46 +61,62 @@ pip install -r requirements.txt
 
 ### 2. Preprocess the Data
 
-Run the cleaning script to preprocess the raw tickets dataset:
+Run the preprocessing script to clean text, map priority labels to urgency levels, split dataset, and prepare data for training:
 
 ```bash
 python data_prep.py
 ```
 
-This loads `data/tickets.csv`, cleans the text, maps priority labels to urgency levels, splits the data, and saves the cleaned dataset to `data/tickets_clean.csv`.
+*This generates `data/tickets_clean.csv` from the raw `data/tickets.csv`.*
 
 ### 3. Train the Models
 
-Train both the category and urgency classifiers using TF-IDF + Logistic Regression:
+Train the category and urgency classification pipelines (TF-IDF + Logistic Regression):
 
 ```bash
 python model/train.py
 ```
 
-This script will output accuracy metrics and save the trained pipelines to `model/category_classifier.pkl` and `model/urgency_classifier.pkl`.
+*This outputs evaluation metrics (accuracy, precision, recall) and saves the serialized pipelines to `model/category_classifier.pkl` and `model/urgency_classifier.pkl`.*
 
 ### 4. Run the REST API
 
-Launch the FastAPI server using Uvicorn:
+Launch the FastAPI backend server using Uvicorn:
 
 ```bash
 uvicorn api.main:app --reload --port 8000
 ```
 
-- Access the API root at: http://localhost:8000/
-- Access the auto-generated Swagger UI interactive documentation at: http://localhost:8000/docs
+- **API Root**: `http://localhost:8000/`
+- **Swagger Documentation (Interactive UI)**: `http://localhost:8000/docs`
 
-### 5. Run the Streamlit Dashboard
+### 5. Run the Streamlit Analytics Dashboard
 
-Launch the dashboard interface:
+Launch the interactive triaging and analytics dashboard:
 
 ```bash
 streamlit run app/dashboard.py
 ```
 
-- Open your browser to: http://localhost:8501
-- You can paste single tickets to get immediate predictions, view workload analytics, see weekly volume trends, or upload a CSV in batch format (under the sidebar).
+- **Dashboard UI**: `http://localhost:8501/`
+- Paste individual ticket descriptions for real-time classification, view dynamic workload analytics, or upload a CSV in batch format.
 
-# ticket-classifier
+### 6. Explore the Cinematic Landing Page
 
-> > > > > > > 0440c2faacc729febd8d5297ae406ad517281b7c
+Open the beautiful landing page locally:
+
+- Open `website/index.html` in any modern web browser.
+- Scroll through to experience the Apple-style canvas scroll animation, interactive metrics, and holographic components detailing the ticket-routing flow.
+
+---
+
+## 🎯 SLA & Routing Architecture
+
+When a ticket description is submitted, Ticket3D processes it through parallel classifier heads:
+
+| Predicted Category | Target Department | Urgency Level | SLA Window |
+| :--- | :--- | :--- | :--- |
+| **Billing** | Billing & Accounts | High / Medium / Low | 4h / 24h / 48h |
+| **Technical** | Tech Support | High / Medium / Low | 2h / 12h / 24h |
+| **Login/Auth** | Security Operations | High / Medium / Low | 1h / 6h / 12h |
+| **Feedback/General**| Customer Relations | High / Medium / Low | 8h / 48h / 72h |

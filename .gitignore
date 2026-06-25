@@ -10,9 +10,6 @@ __pycache__/
 *.pyo
 *.pyd
 
-# Models and large files
-# *.pkl (Keep tracked since category_classifier.pkl and urgency_classifier.pkl are under 1MB)
-
 # Datasets
 data/tickets.csv
 data/tickets_clean.csv
@@ -21,3 +18,9 @@ batch_test.csv
 # OS metadata
 .DS_Store
 Thumbs.db
+
+# Heavy media assets and temporary folders
+animation frames/
+images/
+scratch/
+*.mp4

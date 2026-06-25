@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Support Ticket Classifier - Apple-level cinematic scrollytelling product landing page.">
+    <title>Support Ticket Classifier — Apple-Style Scrollytelling</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=9">
+</head>
+<body>
+
+    <!-- ============================================ -->
+    <!-- PRELOADER SCREEN                             -->
+    <!-- ============================================ -->
+    <div id="preloader">
+        <div class="loader-content">
+            <h1 class="loader-logo">Support Ticket Classifier</h1>
+            <div class="progress-ring-container">
+                <svg class="progress-ring" width="120" height="120">
+                    <circle class="progress-ring-circle-bg" stroke="rgba(255,255,255,0.05)" stroke-width="4" fill="transparent" r="52" cx="60" cy="60"/>
+                    <circle class="progress-ring-circle" stroke="#F59E0B" stroke-width="4" fill="transparent" r="52" cx="60" cy="60"/>
+                </svg>
+                <div class="loader-percentage">0%</div>
+            </div>
+            <div class="loader-status">Initializing AI Engine...</div>
+        </div>
+    </div>    <!-- ============================================ -->
+    <!-- NAVIGATION BAR                               -->
+    <!-- ============================================ -->
+    <nav id="main-nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">
+                <span class="logo-text">Support Ticket Classifier</span>
+            </a>
+            <div class="nav-links">
+                <a href="#scrolly-container" class="nav-link active" data-chapter="1">Overview</a>
+                <a href="#scrolly-container" class="nav-link" data-chapter="3">AI Engine</a>
+                <a href="#scrolly-container" class="nav-link" data-chapter="6">Routing</a>
+                <a href="#scrolly-container" class="nav-link" data-chapter="7">Analytics</a>
+                <a href="#architecture" class="nav-link" data-chapter="architecture">Architecture</a>
+            </div>
+            <a href="http://localhost:8501" target="_blank" class="nav-cta">Launch Demo</a>
+        </div>
+    </nav>
+
+    <!-- ============================================ -->
+    <!-- SCROLLYTILLING CONTAINER                      -->
+    <!-- ============================================ -->
+    <div id="scrolly-container">
+        
+        <!-- Pinned Canvas and vignette -->
+        <div class="sticky-wrapper">
+            <canvas id="scrolly-canvas"></canvas>
+            <div class="ambient-glow" id="ambient-glow"></div>
+            <div class="canvas-vignette"></div>
+        </div>
+
+        <!-- Scroll-driven Chapters Overlays -->
+        <div class="scroll-chapters">
+            
+            <!-- Chapter 1 (0% - 15%) -->
+            <div class="scroll-chapter" id="chapter-1">
+                <div class="chapter-content">
+                    <span class="chapter-label">Product Launch</span>
+                    <h2 class="chapter-title">Support Ticket<br><span class="text-gold">Classifier</span></h2>
+                    <h3 class="chapter-subtitle">Transforming support operations with machine learning.</h3>
+                    <p class="chapter-desc">Automatically classify, prioritize, route and assign SLA windows in real time.</p>
+                </div>
+            </div>
+
+            <!-- Chapter 2 (15% - 30%) -->
+            <div class="scroll-chapter" id="chapter-2">
+                <div class="chapter-content split-layout">
+                    <div class="left-col">
+                        <span class="chapter-label">Operational Crisis</span>
+                        <h2 class="chapter-title">The Problem</h2>
+                        <p class="chapter-desc large-text">Thousands of requests compete for attention every day, causing operational friction.</p>
+                        <p class="chapter-desc">Manual triaging leads to delayed responses, misrouted issues, and breached SLAs, draining support team resources and impacting customer experience.</p>
+                    </div>
+                    <div class="right-col">
+                        <div class="problem-stats">
+                            <div class="stat-card glass-card">
+                                <div class="card-glow glow-red"></div>
+                                <span class="card-tag">Manual Triage Delay</span>
+                                <div class="stat-value">18m <span class="stat-unit">/ ticket</span></div>
+                                <div class="card-bar-track"><div class="card-bar-fill red" style="width: 0%" data-width="75%"></div></div>
+                                <span class="card-sub">Average sorting overhead</span>
+                            </div>
+                            <div class="stat-card glass-card">
+                                <div class="card-glow glow-red"></div>
+                                <span class="card-tag">Misrouting Rate</span>
+                                <div class="stat-value">24%</div>
+                                <div class="card-bar-track"><div class="card-bar-fill red" style="width: 0%" data-width="24%"></div></div>
+                                <span class="card-sub">Tickets sent to wrong team</span>
+                            </div>
+                            <div class="stat-card glass-card">
+                                <div class="card-glow glow-red"></div>
+                                <span class="card-tag">SLA Breaches</span>
+                                <div class="stat-value">15%</div>
+                                <div class="card-bar-track"><div class="card-bar-fill red" style="width: 0%" data-width="15%"></div></div>
+                                <span class="card-sub">Delayed critical resolutions</span>
+                            </div>
+                            <div class="stat-card glass-card">
+                                <div class="card-glow glow-red"></div>
+                                <span class="card-tag">Operational Cost</span>
+                                <div class="stat-value">+$45K <span class="stat-unit">/ mo</span></div>
+                                <div class="card-bar-track"><div class="card-bar-fill red" style="width: 0%" data-width="80%"></div></div>
+                                <span class="card-sub">Manual scaling expense</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chapter 3 (30% - 50%) -->
+            <div class="scroll-chapter" id="chapter-3">
+                <div class="chapter-content split-layout">
+                    <div class="left-col">
+                        <span class="chapter-label">AI Pipeline: Stage 01</span>
+                        <h2 class="chapter-title">Understanding<br>Every Request</h2>
+                        <p class="chapter-desc">Raw ticket text enters the ingestion gateway. In milliseconds, the pipeline performs cleaning, tokenization, stopword removal, and normalization.</p>
+                        <p class="chapter-desc">This reduces unstructured textual data into clean, machine-ready semantic features, filtering out conversational noise.</p>
+                    </div>
+                    <div class="right-col">
+                        <div class="preprocessor-console glass-card">
+                            <div class="console-header">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                                <span class="console-title font-mono">preprocessor_engine.log</span>
+                            </div>
+                            <div class="console-body">
+                                <div class="console-section">
+                                    <div class="console-label font-mono">RAW INPUT:</div>
+                                    <div class="console-text text-raw font-mono" id="morph-raw">"HEY support!! i cant log in to my billing portal, it keeps saying 'error 404' and my password won't work... please reset it ASAP!!!"</div>
+                                </div>
+                                <div class="console-section">
+                                    <div class="console-label font-mono">STATUS:</div>
+                                    <div class="console-text text-state font-mono" id="morph-state">IDLE</div>
+                                </div>
+                                <div class="console-section">
+                                    <div class="console-label font-mono">CLEANED TOKENS:</div>
+                                    <div class="console-text text-clean font-mono" id="morph-clean">log bill portal error password reset</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chapter 4 (50% - 70%) -->
+            <div class="scroll-chapter" id="chapter-4">
+                <div class="chapter-content split-layout reverse-layout">
+                    <div class="left-col">
+                        <div class="vector-features glass-card">
+                            <div class="card-glow glow-cyan"></div>
+                            <div class="vector-header">
+                                <span class="vector-title font-mono">TF-IDF Vector Space</span>
+                                <span class="vector-status font-mono">Inference Active</span>
+                            </div>
+                            <div class="vector-list">
+                                <div class="vector-item" data-term="billing" data-weight="0.842" data-target="Finance">
+                                    <span class="term font-mono">billing</span>
+                                    <div class="weight-bar-track">
+                                        <div class="weight-bar" style="width: 0%"></div>
+                                    </div>
+                                    <span class="weight-val font-mono">0.842</span>
+                                </div>
+                                <div class="vector-item" data-term="network" data-weight="0.912" data-target="Network NOC">
+                                    <span class="term font-mono">network</span>
+                                    <div class="weight-bar-track">
+                                        <div class="weight-bar" style="width: 0%"></div>
+                                    </div>
+                                    <span class="weight-val font-mono">0.912</span>
+                                </div>
+                                <div class="vector-item" data-term="password" data-weight="0.795" data-target="Security Ops">
+                                    <span class="term font-mono">password</span>
+                                    <div class="weight-bar-track">
+                                        <div class="weight-bar" style="width: 0%"></div>
+                                    </div>
+                                    <span class="weight-val font-mono">0.795</span>
+                                </div>
+                                <div class="vector-item" data-term="down" data-weight="0.880" data-target="High Urgency">
+                                    <span class="term font-mono">down</span>
+                                    <div class="weight-bar-track">
+                                        <div class="weight-bar" style="width: 0%"></div>
+                                    </div>
+                                    <span class="weight-val font-mono">0.880</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-col">
+                        <span class="chapter-label">AI Pipeline: Stage 02</span>
+                        <h2 class="chapter-title">Machine Learning<br>In Action</h2>
+                        <p class="chapter-desc">TF-IDF vectorizer extracts mathematical terms from preprocessed text, mapping high-dimensional feature vectors.</p>
+                        <p class="chapter-desc">A dual-head Logistic Regression classifier evaluates weights concurrently to determine Category and Urgency, ensuring minimal computation overhead under 50ms latency.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chapter 5 (70% - 85%) -->
+            <div class="scroll-chapter" id="chapter-5">
+                <div class="chapter-content center-content">
+                    <span class="chapter-label">Real-Time Output</span>
+                    <h2 class="chapter-title centered">Instant Classification</h2>
+                    
+                    <div class="metric-cards">
+                        <!-- Category Card -->
+                        <div class="metric-card glass-card">
+                            <div class="card-glow glow-amber"></div>
+                            <span class="card-tag">Category</span>
+                            <div class="card-value">Network</div>
+                            <div class="card-bar-track"><div class="card-bar-fill" style="width: 72.2%"></div></div>
+                            <span class="card-sub">Confidence: 72.2%</span>
+                        </div>
+                        <!-- Urgency Card -->
+                        <div class="metric-card glass-card">
+                            <div class="card-glow glow-red"></div>
+                            <span class="card-tag">Urgency</span>
+                            <div class="card-value red-text">High</div>
+                            <div class="card-bar-track"><div class="card-bar-fill red" style="width: 74.7%"></div></div>
+                            <span class="card-sub">Confidence: 74.7%</span>
+                        </div>
+                        <!-- Department Card -->
+                        <div class="metric-card glass-card">
+                            <div class="card-glow glow-cyan"></div>
+                            <span class="card-tag">Department</span>
+                            <div class="card-value font-small">Network Ops Center</div>
+                            <div class="card-bar-track"><div class="card-bar-fill cyan" style="width: 100%"></div></div>
+                            <span class="card-sub">Auto-Routed</span>
+                        </div>
+                        <!-- SLA Card -->
+                        <div class="metric-card glass-card">
+                            <div class="card-glow glow-gold"></div>
+                            <span class="card-tag">SLA Window</span>
+                            <div class="card-value gold-text">4 Hours</div>
+                            <div class="card-bar-track"><div class="card-bar-fill gold" style="width: 100%"></div></div>
+                            <span class="card-sub">Countdown Active</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chapter 6 (85% - 95%) -->
+            <div class="scroll-chapter" id="chapter-6">
+                <div class="chapter-content center-content">
+                    <span class="chapter-label">Intelligent Routing</span>
+                    <h2 class="chapter-title centered">Targeted Routing</h2>
+                    <p class="chapter-desc centered max-600">Every ticket automatically reaches the right team in real-time, eliminating manual triage bottlenecks completely.</p>
+                    
+                    <div class="routing-cards">
+                        <!-- Finance -->
+                        <div class="routing-card glass-card">
+                            <div class="card-glow glow-amber"></div>
+                            <div class="route-header">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="12" y1="10" x2="12" y2="10"/><line x1="8" y1="10" x2="8" y2="10"/><line x1="16" y1="10" x2="16" y2="10"/></svg>
+                                <span class="route-team amber-text font-mono">Finance</span>
+                            </div>
+                            <div class="route-stat font-mono">Avg SLA: 12h</div>
+                            <div class="route-details font-mono">billing, invoice, refund</div>
+                        </div>
+                        
+                        <!-- Security -->
+                        <div class="routing-card glass-card">
+                            <div class="card-glow glow-cyan"></div>
+                            <div class="route-header">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#06B6D4" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                <span class="route-team cyan-text font-mono">Security Ops</span>
+                            </div>
+                            <div class="route-stat font-mono">Avg SLA: 2h</div>
+                            <div class="route-details font-mono">password, access, login</div>
+                        </div>
+
+                        <!-- NOC -->
+                        <div class="routing-card glass-card">
+                            <div class="card-glow glow-gold"></div>
+                            <div class="route-header">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4A017" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+                                <span class="route-team gold-text font-mono">Network NOC</span>
+                            </div>
+                            <div class="route-stat font-mono">Avg SLA: 4h</div>
+                            <div class="route-details font-mono">network, server, connection</div>
+                        </div>
+
+                        <!-- Hardware -->
+                        <div class="routing-card glass-card">
+                            <div class="card-glow glow-red"></div>
+                            <div class="route-header">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                                <span class="route-team red-text font-mono">Hardware Desk</span>
+                            </div>
+                            <div class="route-stat font-mono">Avg SLA: 24h</div>
+                            <div class="route-details font-mono">keyboard, laptop, monitor</div>
+                        </div>
+
+                        <!-- Software -->
+                        <div class="routing-card glass-card">
+                            <div class="card-glow glow-green"></div>
+                            <div class="route-header">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                                <span class="route-team green-text font-mono">Software Support</span>
+                            </div>
+                            <div class="route-stat font-mono">Avg SLA: 8h</div>
+                            <div class="route-details font-mono">bug, crash, installation</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chapter 7 (95% - 100%) -->
+            <div class="scroll-chapter" id="chapter-7">
+                <div class="chapter-content center-content">
+                    <span class="chapter-label">Enterprise Control</span>
+                    <h2 class="chapter-title centered">AI-Powered Operations</h2>
+                    <p class="chapter-desc centered max-600">Real-time analytics and automated routing working in unison. Improved efficiency, faster resolutions, and zero wasted minutes.</p>
+                    <div class="operations-grid">
+                        <div class="op-stat"><span class="val" id="counter-accuracy">0%</span><span class="lbl">Accuracy</span></div>
+                        <div class="op-stat"><span class="val" id="counter-latency">200ms</span><span class="lbl">Latency</span></div>
+                        <div class="op-stat"><span class="val" id="counter-automated">0%</span><span class="lbl">Automated</span></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- TECHNICAL ARCHITECTURE SECTION              -->
+    <!-- ============================================ -->
+    <section id="architecture">
+        <div class="section-inner">
+            <span class="chapter-label center-label">Architecture</span>
+            <h2 class="section-headline">System Architecture</h2>
+            <h3 class="section-subheadline font-sans">An end-to-end overview of the ML pipeline routing engine.</h3>
+            
+            <div class="architecture-stack">
+                <!-- Layer 1 -->
+                <div class="arch-layer glass-card" data-layer="1">
+                    <div class="layer-number font-mono">01</div>
+                    <div class="layer-info">
+                        <h4 class="layer-title">Ingestion Layer</h4>
+                        <p class="layer-desc">Gateway for incoming customer issues, supporting webhooks, dashboard REST submissions, and email forwarding API gateways.</p>
+                    </div>
+                    <div class="layer-tech font-mono">FastAPI / Uvicorn / JSON API</div>
+                </div>
+                
+                <!-- Layer 2 -->
+                <div class="arch-layer glass-card" data-layer="2">
+                    <div class="layer-number font-mono">02</div>
+                    <div class="layer-info">
+                        <h4 class="layer-title">Preprocessing & Vectorization</h4>
+                        <p class="layer-desc">Regex-based normalization, stopword stripping, lowercasing, tokenization, and high-dimensional TF-IDF vector fitting.</p>
+                    </div>
+                    <div class="layer-tech font-mono">Scikit-Learn / TF-IDF Vectorizer</div>
+                </div>
+                
+                <!-- Layer 3 -->
+                <div class="arch-layer glass-card" data-layer="3">
+                    <div class="layer-number font-mono">03</div>
+                    <div class="layer-info">
+                        <h4 class="layer-title">ML Dual-Head Inference</h4>
+                        <p class="layer-desc">Parallel logistic regression model prediction heads calculate class probability confidence curves for both ticket Category and Urgency in under 50ms.</p>
+                    </div>
+                    <div class="layer-tech font-mono">Python / Scikit-Learn / Pickle</div>
+                </div>
+                
+                <!-- Layer 4 -->
+                <div class="arch-layer glass-card" data-layer="4">
+                    <div class="layer-number font-mono">04</div>
+                    <div class="layer-info">
+                        <h4 class="layer-title">Targeted Routing & SLA Orchestration</h4>
+                        <p class="layer-desc">Dynamic department assignment dispatcher. Instantiates a real-time countdown timer based on urgency, triggering Slack and Jira webhook notifications.</p>
+                    </div>
+                    <div class="layer-tech font-mono">Webhooks / PostgreSQL / Streamlit</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- TECH STACK SECTION                           -->
+    <!-- ============================================ -->
+    <section id="tech">
+        <div class="section-inner">
+            <span class="chapter-label center-label">Core Tech</span>
+            <h2 class="section-headline">The Technology Stack</h2>
+            <h3 class="section-subheadline font-sans">Built on robust, high-performance tools for reliability and speed.</h3>
+            
+            <div class="tech-grid">
+                <div class="tech-card glass-card">
+                    <div class="tech-icon font-mono">Py</div>
+                    <h4 class="tech-name">Python 3.10</h4>
+                    <p class="tech-desc">Primary programming language driving our data pipelines and server backend.</p>
+                </div>
+                <div class="tech-card glass-card">
+                    <div class="tech-icon font-mono">Fa</div>
+                    <h4 class="tech-name">FastAPI</h4>
+                    <p class="tech-desc">High-performance REST API endpoints for model inference and webhook ingestion.</p>
+                </div>
+                <div class="tech-card glass-card">
+                    <div class="tech-icon font-mono">Sl</div>
+                    <h4 class="tech-name">Scikit-Learn</h4>
+                    <p class="tech-desc">Core ML library used for TF-IDF vector fitting and Logistic Regression training.</p>
+                </div>
+                <div class="tech-card glass-card">
+                    <div class="tech-icon font-mono">St</div>
+                    <h4 class="tech-name">Streamlit</h4>
+                    <p class="tech-desc">Interactive dashboard UI for ticket testing, queue analytics, and batch CSV processing.</p>
+                </div>
+                <div class="tech-card glass-card">
+                    <div class="tech-icon font-mono">Gs</div>
+                    <h4 class="tech-name">GSAP / Canvas</h4>
+                    <p class="tech-desc">Enables fluid, hardware-accelerated, Apple-style scroll-driven interface rendering.</p>
+                </div>
+                <div class="tech-card glass-card">
+                    <div class="tech-icon font-mono">Ps</div>
+                    <h4 class="tech-name">PostgreSQL</h4>
+                    <p class="tech-desc">Persistent storage of tickets, classifications, response logs, and active SLA countdowns.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- FINAL CTA SECTION                            -->
+    <!-- ============================================ -->
+    <section id="final-cta">
+        <div class="cta-inner">
+            <h2 class="cta-headline">Transform Support<br>Operations with AI</h2>
+            <h3 class="cta-subheadline">Classify. Prioritize. Route. Resolve.</h3>
+            
+            <div class="cta-actions">
+                <a href="http://localhost:8501" target="_blank" class="btn-primary magnetic-btn glow-btn" style="text-decoration: none;">
+                    <span>Launch Live Demo</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+                <a href="#scrolly-container" class="btn-secondary magnetic-btn" id="btn-replay" style="text-decoration: none;">
+                    <span>Replay Experience</span>
+                </a>
+            </div>
+            
+            <div class="cta-features-list">
+                <span>FastAPI Backend</span>
+                <span class="dot">·</span>
+                <span>Scikit-Learn Classifier</span>
+                <span class="dot">·</span>
+                <span>SLA Automation</span>
+            </div>
+        </div>
+        
+        <footer class="cta-footer">
+            <div class="footer-inner">
+                <span class="footer-logo">Support Ticket Classifier</span>
+                <span class="footer-copy">&copy; 2026 Support Ticket Classifier. All rights reserved.</span>
+            </div>
+        </footer>
+    </section>
+
+    <!-- Custom Cursor -->
+    <div id="custom-cursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-ring"></div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SCRIPTS                                      -->
+    <!-- ============================================ -->
+    <script src="gsap.min.js"></script>
+    <script src="ScrollTrigger.min.js"></script>
+    <script src="script.js?v=9"></script>
+</body>
+</html>

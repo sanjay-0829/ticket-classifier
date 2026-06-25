@@ -4,7 +4,14 @@ import pandas as pd
 import plotly.express as px
 from datetime import datetime
 
-API_URL = "https://ticket-api.onrender.com"   # your Render URL
+# Use local backend if available, otherwise fallback to Render URL
+API_URL = "http://localhost:8000"
+try:
+    if not requests.get(f"{API_URL}/health", timeout=0.5).ok:
+        API_URL = "https://ticket-api.onrender.com"
+except Exception:
+    API_URL = "https://ticket-api.onrender.com"
+
 
 st.set_page_config(
     page_title="Support Routing Dashboard",
